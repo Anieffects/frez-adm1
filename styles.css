@@ -172,6 +172,22 @@ nav ul li a.active {
     line-height: 1.5; /* Межстрочный интервал, например, 1.5 */
 	font-weight: 200;
 }
+@media (max-width: 768px) {
+    .overlay {
+        width: 90%; /* Используем проценты, чтобы оверлей занимал большую часть экрана */
+        padding: 20px; /* Уменьшаем отступ */
+    }
+
+    .overlay h2 {
+        font-size: 30px; /* Уменьшаем размер шрифта */
+        padding-top: 20px; /* Уменьшаем отступ */
+    }
+
+    .overlay p {
+        font-size: 18px; /* Уменьшаем размер шрифта */
+        padding-top: 20px; /* Уменьшаем отступ */
+    }
+}
 /* Псевдоэлемент для градиента */
 .slideshow-container::before {
     content: "";
@@ -185,6 +201,11 @@ nav ul li a.active {
 }
 
 @media (max-width: 1300px) {
+	 .advantages__image,
+    .advantages__image1 {
+        width: 100% !important; /* Ширина изображения занимает 100% ширины контейнера */
+        height: auto; /* Высота изображения автоматически подстраивается под ширину */
+		margin: 0; }
 	.advantages__item--reverse ,
     .advantages__item, 
     .advantages__item--reverse,
@@ -672,6 +693,17 @@ input {
     border: 2px solid brown;
     font-size: 18px;
 	border-radius: 12px;
+}
+/* Медиазапрос для экранов с максимальной шириной 1000px */
+@media (max-width: 1000px) {
+    .callback-form2 {
+        flex-direction: column; /* Элементы формы располагаются в столбик */
+        align-items: stretch;   /* Элементы формы растягиваются на всю ширину контейнера */
+    }
+
+    .callback-button2 {
+        width: 100%; /* Кнопка растягивается на всю ширину контейнера */
+    }
 }
 .questions-container {
     background-color: red; /* Или любой другой цвет, который вам подходит */
