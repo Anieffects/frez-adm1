@@ -1,0 +1,839 @@
+@font-face {
+    font-family: 'PT Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif !important;
+}
+/* Плавное появление всех элементов */
+* {
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Исходное состояние: полностью прозрачный */
+body {
+    opacity: 0;
+}
+
+/* Полная видимость после загрузки страницы */
+body.loaded {
+    opacity: 1;
+}
+
+
+header {
+    background-color: #ffffff;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 15px 15px -5px rgba(0, 0, 0, 0.2); /* Тень под header */
+    z-index: 1000;
+}
+
+    
+      
+
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-left: 15%; /* Отступ слева */
+    padding-right: 15%; /* Отступ справа */
+    
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+@media (max-width: 1300px) {
+    #menu {
+        display: none; 
+    }
+    
+    .hamburger {
+        display: block; 
+    }
+    
+    #menu.active {
+		
+		padding-left: 20%;
+        display: flex;
+        position: absolute;
+        top: 65px; /* высота вашего header */
+        background-color: #ffffff;
+        flex-direction: column;
+        width: 220%;
+		height: 800%;
+		
+		border-radius: 5px;
+        box-shadow: 0px 15px 15px -5px rgba(0, 0, 0, 0.2); 
+    }
+}
+
+}
+#branding span {
+    color: red;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+	 transition: all 0.7s ease-in-out;
+}
+
+nav ul li a,
+nav ul li span {
+    color: #000;
+    text-decoration: none;
+}
+
+
+nav ul li span {
+    padding-left: 10px;
+    border-left: 1px solid #000; /* Линия между текстом и адресом электронной почты */
+}
+
+nav ul li a.active {
+    color: red; /* Красный цвет для активного пункта меню */
+}
+
+
+/* ... слайдер ... */
+.slideshow-container {
+    width: 100%;
+    height: 950px;
+    position: relative;
+    overflow: hidden;
+	background-size: cover;
+	background-position: center 0;
+	
+}
+
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Плавное затухание */
+}
+
+.slide:first-child {
+    opacity: 1; /* Первый слайд видимый изначально */
+}
+/* ... слайдер ... */
+.overlay {
+    
+
+    backdrop-filter: blur(10px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(10px); /* Для поддержки Safari */
+	font-family: 'PT Sans', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с 70% прозрачностью */
+    border-radius: 4px; /* Скругленные углы */
+    color: white; /* Белый текст */
+    padding: 40px; /* Отступ внутри оверлея */
+    width: 650px; /* Ширина оверлея */
+	height: 430px;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование оверлея */
+    text-align: center; /* Выравнивание текста по центру */
+    z-index: 2; /* Оверлей поверх слайдов */
+}
+.overlay h2 {
+	padding-top: 30px;
+	font-family: 'PT Sans', sans-serif;
+    color: whitesmoke;
+    font-size: 40px;
+	font-weight: 500;
+}
+.overlay p {
+    padding-top: 30px;
+    font-size: 25px;
+    color: whitesmoke;
+    line-height: 1.5; /* Межстрочный интервал, например, 1.5 */
+	font-weight: 200;
+}
+/* Псевдоэлемент для градиента */
+.slideshow-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1) 100%);
+    z-index: 1;
+}
+
+@media (max-width: 1300px) {
+	.advantages__item--reverse ,
+    .advantages__item, 
+    .advantages__item--reverse,
+	.advantages__image,
+	.advantages__content
+	{
+        flex-direction: column;
+    }
+	.advantages__item--reverse ,
+	.advantages__image,
+    .advantages__image--left,
+    .advantages__image--right,
+	.advantages__content{
+        margin: 0 0 20px 0; /* Отступ между изображением и текстом */
+    }
+}
+
+
+
+.advantages {
+	 box-shadow: inset 0 10px 10px -10px #000000;
+	background-color: white;
+ padding-top: 60px;
+	text-align: center;
+	z-index: 1008;
+}
+.advantages__title {
+  font-size: 2.3em;
+}
+
+.advantages__description {
+  margin: 0 0 40px 0;
+	font-size: 28px;
+}
+
+.advantages__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+	font-size: 20px;
+}
+
+.advantages__image {
+    border-radius: 5px;
+    width: 550px;
+    height: auto;
+    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.5);
+    margin-right: 50px;
+}
+
+.advantages__image1 {
+    border-radius: 5px;
+    width: 550px;
+    height: auto;
+    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.5);
+    margin-left: 50px;
+}
+.advantages__content {
+    text-align: left;
+}
+
+.advantages__item:nth-child(2) .advantages__content {
+    text-align: right;
+}
+
+@media (max-width: 1300px) {
+	  .advantages__image,
+    .advantages__item,
+  
+    .advantages__content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .advantages__image {
+        margin: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 1300px) {
+    .slider-container1 {
+        width: 100%; /* или другой размер, который вы хотите установить */
+        /* другие стили, которые вы хотите изменить */
+    }
+}
+
+.slider-container1 {
+	 background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Минимальная высота контейнера равна высоте окна просмотра */
+	width: 100%;
+	text-align: center;
+}
+
+
+.slider1 {
+    border-radius: 5px;
+    width: 70%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+.slides1 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+	aspect-ratio: 16 / 9; /* Пример для соотношения сторон 16:9 */
+}
+
+.slide1 {
+    min-width: 100%;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Центральный слайд */
+.slides .slide:nth-child(2) {
+    opacity: 1; /* Полная видимость */
+}
+
+/* Отступы для плавного перехода */
+.slide::before,
+.slide::after {
+    content: '';
+    flex-grow: 1;
+}
+
+.arrow {
+	
+	height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    user-select: none;
+}
+
+.arrow-left {
+	padding-top: 25%;
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+	padding-top: 25%;
+}
+
+
+/* Стили для модального окна */
+.modal {
+	font-family: 'PT Sans', sans-serif;
+	backdrop-filter: blur(7px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(7px); /* Для поддержки Safari */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+	align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+	z-index: 1100;
+}
+
+.modal-content1 {
+	
+    background-color: #f2f2f2;
+    border: 1px solid #888;
+	  width: 40%; /* 600px (ширина поля) + 40px */
+    margin: auto; /* для центрирования */
+    position: relative;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.modal-content {
+	
+	border-radius: 30px;
+    background-color: #F8902C;
+
+    border: 1px solid #888;
+    width: 50%;
+	  width: 700px; /* 600px (ширина поля) + 40px */
+    margin: auto; /* для центрирования */
+    position: relative;
+    padding: 40px;
+    box-sizing: border-box;
+}
+/* Максимальная ширина поля ввода */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 600px; /* ширина поля */
+    margin: auto; /* для центрирования */
+    display: block; /* блочный элемент */
+	font-size: 18px;
+}
+
+/* Адаптивность для меньших экранов */
+@media (max-width: 640px) {
+    .modal-content {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        width: calc(100% - 20px);
+    }
+}
+
+.close {
+	
+    color: #aaaaaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стили для таблицы */
+table {
+	
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.modal1 {
+	
+	backdrop-filter: blur(7px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(7px); /* Для поддержки Safari */
+    
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+    
+}
+.close-but-os {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: 32px;
+    background-color: transparent;
+    border: none;
+    color: none;
+	opacity: 0;
+    padding: 0;
+    line-height: 1;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+}
+
+.close-but-os:hover {
+    color: red;
+}
+
+.modal1-content {
+	
+    width: 640px;
+    background-color: #fefefe;
+    padding: 10px;
+       background-color: #fefefe; /* Плоский цвет фона */
+    border: none; /* Убрать рамку */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Тень для "выдвижения" элемента */
+    box-sizing: border-box;
+    animation-name: bubble;
+    animation-duration: 0.4s;
+	  position: relative;
+}
+
+/* Адаптивность для меньших экранов */
+@media (max-width: 640px) {
+    .modal1-content {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.submit-button {
+	font-family: 'pt sans';
+	width: 100%;
+    background-color: red;
+    color: black;
+    border: none;
+	border-radius: 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px !important;
+    cursor: pointer;
+    border-radius: 8px;
+	 transition: background-color 0.6s; /* Анимация изменения цвета фона */
+}
+
+.submit-button:hover {
+	font-family: 'PT Sans', sans-serif;
+    background-color: yellow;
+	
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	font-family: 'PT Sans', sans-serif;
+	padding: 10px;
+	border-radius: 25px;
+	border: 1px solid lightblue; /* Устанавливаем цвет границы */
+    background-color: lightgoldenrodyellow; /* Светло-голубой цвет фона */
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+font-family: 'PT Sans', sans-serif;
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+    color: #666;
+}
+input[type="file"],
+button.submit-button {
+	
+	font-family: 'PT Sans', sans-serif;
+	padding: 15px 30px;
+	font-size: 18px;
+	border-radius: 30px;
+    display: block;
+    margin: auto;
+}
+
+
+.contact-info {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contact-info p {
+	margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.contact-info span {
+    font-weight: normal;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15%;
+}
+
+.footer-section {
+    width: 23%;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    display: block; /* для вертикального выравнивания элементов */
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #fff; /* Линия между секциями и копирайтом */
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.callback-container2 {
+	
+    background-color: #F8902C;
+    box-shadow: inset 0 10px 10px -10px #000000;
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+    justify-content: center; /* Изменено: элементы выровнены по центру */
+    gap: 5%; /* Добавлено: расстояние между элементами */
+	font-family: 'PT Sans', sans-serif;
+	z-index: 1010;
+}
+
+.callback-text2 {
+	
+     font-size: 24px;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 0 10px #000000; /* Добавлено: тень текста без смещения */
+}
+
+.callback-form2 {
+    display: flex;
+    align-items: center;
+    gap: 5%; /* Отступ между элементами формы */
+	
+}
+
+input {
+    padding: 10px;
+}
+
+.callback-button2 {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid brown;
+    font-size: 18px;
+	border-radius: 12px;
+}
+.questions-container {
+    background-color: red; /* Или любой другой цвет, который вам подходит */
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif; /* Шрифт PT Sans */
+}
+
+.questions-container p {
+    margin: 0;
+    font-size: 24px; /* Или любой другой размер, который вам подходит */
+    color: #ffffff; /* Цвет текста */
+    text-transform: uppercase; /* Преобразует все символы текста в верхний регистр */
+}
+
+.questions-container span {
+    color: #ffffff; /* Можно изменить на другой цвет, если номер телефона должен выделяться */
+}
+
+
+
+.stages-container {
+	
+    display: flex;
+	align-items: center;
+    justify-content: space-around;
+        box-shadow: inset 0 10px 10px -5px #101010;
+    flex-wrap: wrap;
+    padding: 20px;
+	background-color: red;
+	  justify-content: center; /* Изменено */
+	
+}
+
+.stage {
+	height: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px;
+	 margin-left: 10px;
+    margin-right: 10px;
+    width: 300px;
+    border-radius: 0px;
+}
+.stage:hover {
+    box-shadow: 0 0 0 5px orange, 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляет "рамку" жёлтого цвета в 5px */
+}
+
+.stage-icon {
+	margin-top: 10px;
+    width: 128px;
+    height: 128px;
+}
+
+.stage-title {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.stage-text {
+    margin-top: 10px;
+    color: #666;
+}
+
+@media (max-width: 1000px) {
+    .stages-container {
+        flex-direction: column;
+    }
+}
+
+
+.article3-container {
+    margin: auto;
+    padding: 40px;
+    background-color: #F8902C; 
+    border-radius: 0px; 
+    box-shadow: inset 0 0px 30px -10px #000000; /* Внутренняя тень снизу */
+    width: 100%;
+}
+
+.article3-title {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.article3s {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; /* Выравнивание кнопок по центру */
+}
+
+.article3 {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    color: black; /* Цвет текста статьи */
+    font-size: 1.2em;
+	 box-shadow: 0px 15px 15px -5px rgba(0, 0, 0, 0.2); 
+}
+
+.article3-link {
+    text-decoration: none;
+
+}
+
+.article3:hover {
+    background-color: yellow; /* Цвет фона при наведении */
+    cursor: pointer;
+}
+
+.modal3 {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+	backdrop-filter: blur(5px); /* Размытие фона */
+	
+}
+
+.modal3-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2); /* Тень вокруг контента в модальном окне */
+	max-height: 100vh; /* Установка максимальной высоты модального окна, например, 80% от высоты экрана */
+    overflow-y: auto; /* Добавление вертикальной прокрутки */
+    position: relative; /* Добавлено: относительное позиционирование для .close-button */
+}
+
+.modal3-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .article3-container,
+    .modal3-content {
+        width: 90%;
+    }
+}
+
+@font-face {
+    font-family: 'PT Sans', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
