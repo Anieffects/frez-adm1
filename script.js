@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
-\
+
 
 document.addEventListener('DOMContentLoaded', function () {
     var modal = document.querySelector('.modal1');
