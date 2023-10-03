@@ -38,7 +38,19 @@ header {
 }
 
     
-      
+  @media (max-width: 900px) {
+    .menu {
+        flex-direction: column-reverse; /* Меняет направление оси, так что гамбургер будет сверху */
+    }
+    
+    #menu {
+        /* ... */
+    }
+    
+    .hamburger {
+        margin-bottom: 10px; /* Добавляет небольшой отступ между гамбургером и названием */
+    }
+}    
 
 .menu {
     position: relative;
@@ -61,7 +73,7 @@ header {
     #menu {
         display: none; 
     }
-    
+
     .hamburger {
         display: block; 
     }
@@ -74,15 +86,14 @@ header {
         top: 65px; /* высота вашего header */
         background-color: #ffffff;
         flex-direction: column;
-        width: 220%;
-		height: 800%;
-		
+        width: 220px;
+		height: 300px;
 		border-radius: 5px;
         box-shadow: 0px 15px 15px -5px rgba(0, 0, 0, 0.2); 
     }
-}
 
 }
+
 #branding span {
     color: red;
     font-size: 30px;
