@@ -36,14 +36,19 @@ setInterval(() => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOM загружен"); // Для проверки, что DOM полностью загружен
+    console.log("DOM загружен");
     document.querySelectorAll('nav a').forEach(anchor => {
-        console.log("Добавление обработчика для", anchor); // Проверка, что обработчик добавляется
+        console.log("Добавление обработчика для", anchor);
         anchor.addEventListener('click', function (e) {
+            // Если у ссылки есть класс icon-link, то не блокируем действие по умолчанию
+            if (this.classList.contains('icon-link')) {
+                return;
+            }
+            
             e.preventDefault();
             const targetClass = this.getAttribute('data-target');
             const targetElement = document.querySelector(targetClass);
-            console.log("Клик по", anchor, "Целевой элемент", targetElement); // Проверка, что элемент найден
+            console.log("Клик по", anchor, "Целевой элемент", targetElement);
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             }
@@ -86,11 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Обработчик клика для открытия модального окна
     openButton.addEventListener('click', function () {
         modal.style.display = 'flex';
-    });
-
-    // Обработчик клика для закрытия модального окна
-    closeButton.addEventListener('click', function () {
-        modal.style.display = 'none';
     });
 
     // Закрытие модального окна при клике вне его
@@ -167,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.article3-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            modal3.style.display = 'flex';
         });
     });
 

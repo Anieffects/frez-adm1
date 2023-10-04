@@ -87,7 +87,7 @@ header {
         background-color: #ffffff;
         flex-direction: column;
         width: 220px;
-		height: 300px;
+		height: 400px;
 		border-radius: 5px;
         box-shadow: 0px 15px 15px -5px rgba(0, 0, 0, 0.2); 
     }
@@ -123,6 +123,11 @@ nav ul li a.active {
     color: red; /* Красный цвет для активного пункта меню */
 }
 
+nav ul li a img {
+    width: 30px; /* или любой другой размер */
+    height: auto;
+    margin-right: 6px; /* отступ справа для иконок */
+}
 
 /* ... слайдер ... */
 .slideshow-container {
