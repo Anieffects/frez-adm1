@@ -128,11 +128,24 @@ nav ul li a img {
     height: auto;
     margin-right: 6px; /* отступ справа для иконок */
 }
-.icon-link {
-    width: 30px; /* или любой другой размер */
-    height: auto;
-    margin-right: 6px; /* отступ справа для иконок */
+
+#open-feedback {
+	color: red;
+    border: 1px solid red;
+    padding: 5px;
+	border-radius: 5px;
 }
+
+#open-feedback {
+    transition: background-color 0.4s, color 0.4s; /* Плавный переход за 0.3 секунды */
+}
+
+#open-feedback:hover {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+
 /* ... слайдер ... */
 .slideshow-container {
     width: 100%;
@@ -417,7 +430,7 @@ img {
 }
 .modal-content {
 	
-	border-radius: 30px;
+	border-radius: 10px;
     background-color: #F8902C;
 
     border: 1px solid #888;
@@ -556,7 +569,7 @@ th {
     background-color: red;
     color: black;
     border: none;
-	border-radius: 15px;
+	border-radius: 10px;
     text-align: center;
     display: inline-block;
     font-size: 20px !important;
@@ -576,7 +589,7 @@ input[type="tel"],
 textarea {
 	font-family: 'PT Sans', sans-serif;
 	padding: 10px;
-	border-radius: 25px;
+	border-radius: 10px;
 	border: 1px solid lightblue; /* Устанавливаем цвет границы */
     background-color: lightgoldenrodyellow; /* Светло-голубой цвет фона */
     width: 100%;
@@ -596,7 +609,7 @@ button.submit-button {
 	font-family: 'PT Sans', sans-serif;
 	padding: 15px 30px;
 	font-size: 18px;
-	border-radius: 30px;
+	border-radius: 10px;
     display: block;
     margin: auto;
 }
@@ -768,7 +781,6 @@ input {
 	 margin-left: 10px;
     margin-right: 10px;
     width: 300px;
-    border-radius: 0px;
 }
 .stage:hover {
     box-shadow: 0 0 0 5px orange, 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляет "рамку" жёлтого цвета в 5px */
@@ -801,7 +813,6 @@ input {
     margin: auto;
     padding: 40px;
     background-color: #F8902C; 
-    border-radius: 0px; 
     box-shadow: inset 0 0px 30px -10px #000000; /* Внутренняя тень снизу */
     width: 100%;
 }
