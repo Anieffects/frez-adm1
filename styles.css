@@ -326,20 +326,30 @@ nav ul li a img {
 }
 
 .slider-container1 {
-	 background-color: black;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh; /* Минимальная высота контейнера равна высоте окна просмотра */
-	width: 100%;
-	text-align: center;
+    height: 90vh;
+    width: 100%;
+    text-align: center;
 }
 
+.slider-content {
+    width: 70%; /* Определите ширину содержимого слайдера */
+    text-align: center;
+}
+
+.slider-title {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 20px; /* Отступ снизу, чтобы создать пространство между заголовком и слайдером */
+	padding-top: 20px;
+}
 
 .slider1 {
     border-radius: 5px;
-    width: 70%;
-    position: relative;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -759,16 +769,29 @@ input {
 
 
 .stages-container {
-	
-    display: flex;
-	align-items: center;
-    justify-content: space-around;
-        box-shadow: inset 0 10px 10px -5px #101010;
-    flex-wrap: wrap;
+    box-shadow: inset 0 10px 10px -5px #101010;
     padding: 20px;
-	background-color: red;
-	  justify-content: center; /* Изменено */
-	
+    background-color: red;
+    text-align: center; /* Выравнивание текста по центру */
+}
+.advantages-title-container {
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 20px; /* Отступ от заголовка до первого преимущества */
+	padding-top: 20px;
+}
+
+.advantages-title {
+    font-size: 38px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+}
+
+.stages-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .stage {
