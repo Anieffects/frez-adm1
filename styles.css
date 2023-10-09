@@ -133,6 +133,8 @@ nav ul li a img {
 	color: red;
     border: 1px solid red;
     padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
 	border-radius: 5px;
 }
 
@@ -283,18 +285,16 @@ nav ul li a img {
 }
 
 .advantages__image {
-    border-radius: 5px;
+	
     width: 550px;
     height: auto;
-    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.5);
     margin-right: 50px;
 }
 
 .advantages__image1 {
-    border-radius: 5px;
+	
     width: 550px;
     height: auto;
-    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.5);
     margin-left: 50px;
 }
 .advantages__content {
@@ -624,7 +624,6 @@ button.submit-button {
     margin: auto;
 }
 
-
 .contact-info {
     padding: 20px;
     background-color: #f4f4f4;
@@ -640,6 +639,8 @@ button.submit-button {
 .contact-info span {
     font-weight: normal;
 }
+
+
 
 footer {
     background-color: #000;
@@ -781,7 +782,7 @@ input {
 }
 
 .advantages-title {
-    font-size: 38px;
+    font-size: 36px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
 }
@@ -922,4 +923,60 @@ input {
     margin: 0;
     padding: 0;
     box-sizing:border-box;
+}
+
+
+.contact-container {
+    max-width: 1360px; /* Ширина контейнера для 12-колоночной сетки */
+    margin: 0 auto; /* Центрирование */
+    padding: 0 15px; /* Отступы */
+	padding-top: 5%;
+	padding-bottom: 4%;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px; /* Компенсация отступов */
+    margin-right: -15px;
+}
+
+.col-6 {
+    width: 50%; /* 6 из 12 колонок */
+    box-sizing: border-box;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+
+@media (max-width: 1000px) {
+    .col-6 {
+        width: 100%; /* При ширине экрана менее 1000px каждый блок занимает 100% ширины */
+    }
+    #map {
+        height: 300px; /* Уменьшаем высоту карты для мобильных устройств */
+    }
+}
+.social-links {
+    display: flex;
+    justify-content: center; /* Центрирование иконок по горизонтали */
+    align-items: center;
+    margin-top: 20px; /* Отступ сверху для разделения социальных ссылок от другой информации */
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.social-links a:last-child {
+    margin-right: 0; /* Убрать отступ справа у последней иконки */
+}
+
+.social-links img {
+    width: 64px;
+    height: 64px;
 }
