@@ -24,15 +24,41 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(showSlide, 5000); // Переключение слайдов каждые 5 секунд
 });
 
-let currentIndex = 0;
-const slides = document.querySelector('.slides1');
-const slideCount = document.querySelectorAll('.slide1').length;
 
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % slideCount; // Переход к следующему слайду, с возвращением к первому после последнего
-    const offset = -currentIndex * 100; // Расчет смещения
-    slides.style.transform = `translateX(${offset}%)`; // Применение смещения
-}, 3000); // Задержка в 3000 мс (3 секунды) между слайдами
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelector('.slides1');
+    const slideCount = document.querySelectorAll('.slide1').length;
+    let currentIndex = 0;
+    let timeout;
+
+    function switchSlide() {
+        const offset = -currentIndex * 100; 
+        slides.style.transform = `translateX(${offset}%)`; 
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        switchSlide();
+        resetTimer();
+    }
+
+    function previousSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        switchSlide();
+        resetTimer();
+    }
+
+    function resetTimer() {
+        clearTimeout(timeout);
+        timeout = setTimeout(nextSlide, 5000);
+    }
+
+    document.querySelector('.arrow-left').addEventListener('click', previousSlide);
+    document.querySelector('.arrow-right').addEventListener('click', nextSlide);
+
+    resetTimer();  // Начинаем автоматическое переключение
+});
+
 
 
 document.addEventListener('DOMContentLoaded', function () {

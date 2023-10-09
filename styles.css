@@ -360,6 +360,7 @@ nav ul li a img {
     display: flex;
     transition: transform 0.5s ease-in-out;
 	aspect-ratio: 16 / 9; /* Пример для соотношения сторон 16:9 */
+	
 }
 
 .slide1 {
