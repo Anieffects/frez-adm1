@@ -165,22 +165,25 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-ymaps.ready(init);
-
-function init() {
-    var myMap = new ymaps.Map("map", {
+ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
         center: [59.995033, 30.274177],
         zoom: 17
+    }, {
+        searchControlProvider: 'yandex#search'
     });
 
-    var myPlacemark = new ymaps.Placemark([59.995033, 30.274177], {
+    var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
         hintContent: 'Адмаркет',
         balloonContent: 'Фрезерная и лазерная резка, гравировка.</br> Фрезеровка Санкт- Петербург.</br> Фрезеровка спб'
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+     
     });
 
     myMap.geoObjects.add(myPlacemark);
-	myMap.behaviors.disable('scrollZoom');
-}
+});
 
 
 
