@@ -165,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-ymaps.ready(init);
 
 function init() {
     var myMap = new ymaps.Map("map", {
@@ -180,8 +179,11 @@ function init() {
 
     myMap.geoObjects.add(myPlacemark);
 	myMap.behaviors.disable('scrollZoom');
-
 }
+
+
+
+
 document.querySelector('.hamburger').addEventListener('click', function() {
     document.querySelector('#menu').classList.toggle('active');
 });
