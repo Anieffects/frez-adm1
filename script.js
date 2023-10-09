@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+ymaps.ready(init);
 
 function init() {
     var myMap = new ymaps.Map("map", {
