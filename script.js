@@ -266,3 +266,4 @@ class ModalManager {
 
 // Инициализация менеджера модальных окон
 const modalManager = new ModalManager();
+
