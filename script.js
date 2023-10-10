@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Отображение модального окна при клике на пункт меню
     document.querySelector('nav a[data-toggle="modal"]').addEventListener('click', function (e) {
         e.preventDefault();
-        modal.style.display = "block";
+        modal.style.display = "flex";
     });
 
     // Закрытие модального окна при клике на "x"
@@ -221,29 +221,48 @@ for(let modal of modals) {
         }
     });
 }
+class ModalManager {
+    constructor() {
+        this.modals = document.querySelectorAll('.modal3');
+        this.modalLinks = [
+            'article3-link1',
+            'article3-link2',
+            'article3-link3',
+            'article3-link4',
+            'article3-link5',
+            'article3-link6'
+        ];
+        this.init();
+    }
 
-document.getElementById('article3-link1').addEventListener('click', function() {
-    document.getElementById('modal3-1').style.display = 'flex';
-});
+    init() {
+        this.modalLinks.forEach((link, index) => {
+            document.getElementById(link).addEventListener('click', () => {
+                this.openModal(index);
+            });
+        });
 
-document.getElementById('article3-link2').addEventListener('click', function() {
-    document.getElementById('modal3-2').style.display = 'flex';
-});
+        this.modals.forEach((modal, index) => {
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal || event.target.classList.contains('close-button')) {
+                    this.closeModal(index);
+                }
+            });
+        });
+    }
 
-document.getElementById('article3-link3').addEventListener('click', function() {
-    document.getElementById('modal3-3').style.display = 'flex';
-});
+    openModal(index) {
+        if (index >= 0 && index < this.modals.length) {
+            this.modals[index].style.display = 'flex';
+        }
+    }
 
+    closeModal(index) {
+        if (index >= 0 && index < this.modals.length) {
+            this.modals[index].style.display = 'none';
+        }
+    }
+}
 
-document.getElementById('article3-link4').addEventListener('click', function() {
-    document.getElementById('modal3-4').style.display = 'flex';
-});
-
-document.getElementById('article3-link5').addEventListener('click', function() {
-    document.getElementById('modal3-5').style.display = 'flex';
-});
-document.getElementById('article3-link6').addEventListener('click', function() {
-    document.getElementById('modal3-6').style.display = 'flex';
-});
-
-// Аналогичные обработчики для остальных статей и модальных окон...
+// Инициализация менеджера модальных окон
+const modalManager = new ModalManager();

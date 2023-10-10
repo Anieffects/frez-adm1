@@ -277,6 +277,7 @@ nav ul li a img {
 }
 
 .advantages__item {
+	
     display: flex;
     align-items: center;
     justify-content: center;
@@ -299,6 +300,7 @@ nav ul li a img {
 }
 .advantages__content {
     text-align: left;
+	
 }
 
 .advantages__item:nth-child(2) .advantages__content {
@@ -321,7 +323,7 @@ nav ul li a img {
 @media (max-width: 1300px) {
     .slider-container1 {
         width: 100%; /* или другой размер, который вы хотите установить */
-        /* другие стили, которые вы хотите изменить */
+     
     }
 }
 
@@ -330,9 +332,10 @@ nav ul li a img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100%;
     width: 100%;
     text-align: center;
+	padding-bottom: 50px;
 }
 
 .slider-content {
@@ -365,6 +368,7 @@ nav ul li a img {
 
 .slide1 {
     min-width: 100%;
+	height: auto;
     position: relative;
 }
 
@@ -738,6 +742,12 @@ input {
     border: 2px solid brown;
     font-size: 18px;
 	border-radius: 12px;
+	transition: filter 0.3s ease-in-out; 
+}
+
+.callback-button2:hover {
+    filter: brightness(0.75); /* Уменьшение яркости при наведении */
+	transition: filter 0.3s ease-in-out; 
 }
 /* Медиазапрос для экранов с максимальной шириной 1000px */
 @media (max-width: 1000px) {
